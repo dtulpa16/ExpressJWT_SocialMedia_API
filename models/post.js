@@ -12,6 +12,8 @@ function validatePost(post) {
   const schema = Joi.object({
     name: Joi.string().min(2).required(),
     post: Joi.string().min(2).required(),
+    status: Joi.string().optional(),
+    creationDate:Joi.date().optional()
   });
   return schema.validate(post);
 }
