@@ -27,4 +27,15 @@ router.get("/", async (req, res) => {
     return res.status(500).send(`Internal Server Error: ${ex}`);
   }
 });
+router.get("/:id", async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id);
+    if (!post)
+      return res.status(400).send(`The product with id "${req.params.id}" d
+   oes not exist.`);
+    return res.send(post);
+  } catch (ex) {
+    return res.status(500).send(`Internal Server Error: ${ex}`);
+  }
+});
 module.exports = router;
