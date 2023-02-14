@@ -1,1 +1,1 @@
-# ExpressJWT_eCommerce
+# ExpressJWT_SocialMediaAPI
